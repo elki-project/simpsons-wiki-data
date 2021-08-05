@@ -39,6 +39,8 @@ rehtml = re.compile(r"</?([a-zA-Z]+)(?: [^>]*)?/?>")
 # But: guest stars is a good example where we probably do not want this?
 seeds = {
 "Characters": "Characters", # including Animals!
+#"Actors": None, # ambiguous
+#"Adults": None, # ambiguous
 "Guest stars": "Guest stars",
 "Episodes": "Episodes",
 "Merchandise": "Merchandise",
@@ -50,14 +52,14 @@ seeds = {
 "Couch Gags": "Couch Gags",
 "Vehicles": "Vehicles",
 "Media": "Media", # including TV shows, books, films, magazines
-"Products": "Products", # including food, toys; but could be Objects, too.
+#"Products": "Products", # including food, toys; but could be Objects, too.
 "Objects": "Objects",
 "Events": "Events",
 "Trivia": "Trivia",
 "Catchphrases": "Trivia",
 "Cultural References": "Trivia",
 "References": "Trivia",
-"Real World comics": "Real World comics",
+#"Real World comics": "Real World Comics",
 "Cast and Crew": "Cast and Crew",
 "Itchy & Scratchy": "Itchy & Scratchy", # circular
 "Itchy & Scratchy Show episodes": "Itchy & Scratchy", # circular
@@ -98,7 +100,7 @@ def process_categories():
 					p = classmap.get(pa)
 					if p is not None:
 						if not cat in classmap:
-							#print("Inferred:", cat, "->", p)
+							# print("Inferred:", cat, "->", p)
 							classmap[cat] = p
 							active = True
 						elif cat in seeds and p == seeds.get(cat):
@@ -212,7 +214,8 @@ def process(title, text):
 			c = c[9:].split("|")[0].strip()
 			if c in badcats: return
 			lcats.append(c)
-			if c in classmap: scats.append(classmap.get(c))
+			c = classmap.get(c)
+			if c is not None: scats.append(c)
 	# Selected categories
 	scats = list(dict.fromkeys(scats)) # unique, but keep order
 	# Count unhandled categories, to see if we want to extract more
@@ -289,6 +292,7 @@ print("Loaded", len(cathier), "categories, and", len(texts), "raw articles.")
 process_categories()
 
 # Analyze the texts (categories should now be good)
+print("Processing documents...")
 for title, text in texts:
 	try:
 		process(title, text)
