@@ -9,11 +9,18 @@ to use in natural language processing and text mining education.
 Usage
 -----
 
-This was only tested on a Debian linux system, but Ubuntu should be fine.
+This was tested on a Debian linux system and Ubuntu 21.04.
 
 Install the required packages:
 
+Debian:
+
 `apt install python3-lxml python3-wikitrans 7zip
+
+Ubuntu:
+
+`apt install python3-lxml p7zip-full
+`pip install wikitrans
 
 You then need to manually download a "Current pages" dump (no history)
 from the Wiki via <https://simpsons.fandom.com/wiki/Special:Statistics>.
