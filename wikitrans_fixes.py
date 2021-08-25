@@ -2,7 +2,8 @@
 # Bug fixes for wikitrans
 import wikitrans
 
-# Fix for wikitrans 1.3, s/list/seq/
+# Fix for wikitrans 1.3, s/list/seq/, fixed upstream now:
+# https://git.gnu.org.ua/wikitrans.git/commit/wikitrans/wikimarkup.py?id=90a9ed7108e45fa8c2d0300e1308a99171240255
 def _fixed_parse_ref(self):
     """Parse a reference block ([...])"""
     tok = self.getkn()

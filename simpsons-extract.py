@@ -2,7 +2,9 @@
 import re, json, gzip, sys, subprocess
 from lxml import etree, objectify, html
 import wikitrans.wiki2text, wikitrans.wiki2html
-import wikitrans_fixes # For version 1.3 currently
+
+# Bug fixed for version 1.3 - you likely can remove this for wikitrans 1.4:
+import wikitrans_fixes
 
 import os
 if not os.path.exists("simpsons_pages_current.xml.7z"):

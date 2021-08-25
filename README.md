@@ -9,18 +9,10 @@ to use in natural language processing and text mining education.
 Usage
 -----
 
-This was tested on a Debian linux system and Ubuntu 21.04.
+This was tested on a Debian linux system and on Ubuntu 21.04.
 
 Install the required packages:
-
-Debian:
-
-`apt install python3-lxml python3-wikitrans 7zip
-
-Ubuntu:
-
-`apt install python3-lxml p7zip-full
-`pip install wikitrans
+`apt install python3-lxml python3-wikitrans p7zip-full`
 
 You then need to manually download a "Current pages" dump (no history)
 from the Wiki via <https://simpsons.fandom.com/wiki/Special:Statistics>.
@@ -67,9 +59,9 @@ is also available under the same license.
 Attribution
 -----------
 
-Please credit out work by citing the introductiory paper
+Please credit our work by citing the introductiory paper
 
 Erich Schubert, Gloria Feher  
-Learn NLP with the Simpsons Wiki Data Set  
+D'Oh! Learn NLP with the Simpsons Wiki Data Set  
 under review, 2021
 
