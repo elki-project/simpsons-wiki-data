@@ -59,7 +59,7 @@ is also available under the same license.
 Attribution
 -----------
 
-Please credit our work by citing the introductiory paper
+Please credit our work by citing the introductory paper
 
 Erich Schubert, Gloria Feher  
 D'Oh! Learn NLP with the Simpsons Wiki Data Set  
